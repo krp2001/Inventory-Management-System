@@ -1,0 +1,133 @@
+﻿.graphic-icon {
+    position: absolute;
+    top: 180px;
+    left: 80px;
+    width: 380px;
+    height: 220px;
+    object-fit: cover;
+}
+
+.dont-have-an,
+.sign-up {
+    position: absolute;
+    top: 513px;
+    left: 768px;
+}
+
+.dont-have-an {
+    left: 585px;
+    color: var(--katha-light);
+}
+
+.validator {
+    position: absolute;
+    top: 280px;
+    left:-400px;
+}
+
+.button {
+    position: absolute;
+    top: 299px;
+    left: 10px;
+    color: var(--katha-light);
+    border-radius: 10px;
+    background-color: var(--color-white);
+    border: 1px solid var(--katha-extra-light);
+    box-sizing: border-box;
+    width: 312px;
+    height: 42px;
+}
+
+.forgot-password {
+    position: absolute;
+    top: 246px;
+    left: 217px;
+    font-size: 14px;
+    color: var(--katha-extra-light);
+}
+
+.password-is-invalid,
+.textbox-pass {
+    position: absolute;
+    top: 219px;
+    left: 0;
+}
+
+.textbox-pass {
+    top: 163px;
+    border-radius: var(--br-8xs);
+    background-color: var(--color-whitesmoke);
+    border: 1px solid var(--katha-extra-light);
+    box-sizing: border-box;
+    width: 332px;
+    height: 52px;
+}
+
+.password {
+    position: absolute;
+    top: 133px;
+    left: 0;
+    font-size: var(--font-size-base);
+    color: var(--katha-light);
+}
+
+.textbox-user,
+.username-is-invalid {
+    position: absolute;
+    top: 86px;
+    left: 1px;
+}
+
+.textbox-user {
+    top: 30px;
+    left: 0;
+    border-radius: var(--br-8xs);
+    background-color: var(--color-whitesmoke);
+    border: 1px solid var(--katha-extra-light);
+    box-sizing: border-box;
+    width: 332px;
+    height: 52px;
+}
+
+.username {
+    top: 0;
+    left: 1px;
+    font-size: var(--font-size-base);
+    color: var(--katha-light);
+}
+
+.form,
+.log-in,
+.username {
+    position: absolute;
+}
+
+.form {
+    top: 133px;
+    left: 539px;
+    width: 331px;
+    height: 340px;
+    font-size: var(--font-size-smi);
+    color: var(--color-white);
+}
+
+.log-in {
+    top: 45px;
+    left: 648px;
+    font-size: 40px;
+}
+
+.sign-in-page {
+    position: absolute;
+    border-radius: 20px;
+    background: linear-gradient(70.47deg, #682C0E 24.55%, #C24914 97.74%);
+    border-radius: 20px;
+    width: 970px;
+    height: 580px;
+    top: 38px;
+    left: 200px;
+    text-align: center;
+    font-size: var(--font-size-base);
+    color: var(--katha-extra-light);
+    font-family: var(--font-playfair-display);
+}

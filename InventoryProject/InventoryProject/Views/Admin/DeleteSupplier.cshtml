@@ -1,0 +1,54 @@
+﻿@model Supplier
+@{
+    ViewData["Title"] = "DeleteSupplier";
+}
+
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+<h1>Delete Supplier</h1>
+
+
+            <h3>Are you sure you want to delete this?</h3>
+            <br />
+        </div>
+</div>
+<br/>
+<div class="modal-body">
+    <form asp-action="DeleteSupplier">
+        
+        <div class="form-group">
+            <label asp-for="SupplierCode" style="width:120px"><b> Code</b></label>
+
+                <label asp-for="SupplierCode">@Model.SupplierCode</label>
+        </div>
+        <div class="form-group">
+            <label asp-for="SupplierName" style="width:120px"><b> Name</b></label>
+
+                <label asp-for="SupplierName">@Model.SupplierName</label>
+        </div>
+        <div class="form-group">
+            <label asp-for="SupplierEmailId" style="width:120px"><b>EmailId</b></label>
+
+                <label asp-for="SupplierEmailId">@Model.SupplierEmailId</label>
+        </div>
+        <div class="form-group">
+                <label asp-for="SupplierAddress" style="width:120px"><b>Address</b></label>
+
+                <label asp-for="SupplierAddress">@Model.SupplierAddress</label>
+        </div>
+            <div class="form-group">
+                <label asp-for="SupplierPhoneNo" style="width:120px"><b>Phone No</b></label>
+
+                <label asp-for="SupplierPhoneNo">@Model.SupplierPhoneNo</label>
+            </div>
+            <br/>
+            <button type="submit" class="btn btn-primary">Delete</button>
+            <a class="btn btn-danger" asp-action="SupplierHome">Back to List</a>
+        </form>
+
+</div>
+
+
+</div>

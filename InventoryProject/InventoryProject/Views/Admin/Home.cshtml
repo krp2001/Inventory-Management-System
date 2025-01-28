@@ -1,0 +1,102 @@
+﻿@model IEnumerable<ItemViewModel>
+@inject AppDbContext _context;
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h1>Items</h1>
+        </div>
+    </div>
+    <br />
+    <form class="d-flex" asp-action="Home">
+        <input name="Name" class="form-control me-sm-2" type="search" placeholder="Search">
+        <button id="search-text" class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>
+                    Item Name
+                </th>
+                <th>
+                    Quantity
+                </th>
+                <th>
+                    Price
+                </th>
+
+                <th>
+                    Suppliers
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @item.ItemName
+                    </td>
+                    <td>
+                        @item.Quantity
+                    </td>
+                    <td>
+                        @item.Price
+                    </td>
+                    <td>
+                        @*@item.SupplierId*@
+                        @_context.Suppliers.FirstOrDefault(x => x.SupplierId == item.SupplierId).SupplierName
+
+                    </td>
+                    <td>
+                        <a asp-action="EditItem" asp-controller="admin" asp-route-Id="@item.ItemId" class="btn btn-outline-success"> Edit</a> |
+                        <a asp-action="DetailsItem" asp-controller="admin"  asp-route-Id="@item.ItemId" class="btn btn-outline-primary"> Details</a> |
+                        <a asp-action="DeleteItem" asp-controller="admin" asp-route-Id="@item.ItemId" class="btn btn-outline-danger"> Delete</a>
+
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td colspan="6">
+                    <a asp-action="CreateItem" class="btn btn-primary float-start">Create New</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+@section scripts{
+    <script>
+        $(function () {
+            $("#search-text").click(function () {
+                $("Form").submit();
+            })
+        });
+
+
+
+    </script>
+}
+
+@*        $(document).ready(function () {
+            $(".details-btn").click(function () {
+                var url = $(this).attr("href");
+                $.get(url).done(function (data) {
+                    $("#detailsContent").html(data);
+                    $("#detailsModal").modal("show");
+                });
+                return false;
+            });
+        });*@
+
+@*@section scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}*@

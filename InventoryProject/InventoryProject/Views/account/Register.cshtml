@@ -1,0 +1,25 @@
+﻿@using InventoryProject.ViewModel;
+@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+<form method="post">
+    <div class="register-page">
+        <button type="submit" class="button">Register</button>
+        <label asp-for="ConfirmPassword" class="confirm-password"></label>
+        <input asp-for="ConfirmPassword" class="textbox-confirm-pass" />
+        <span asp-validation-for="ConfirmPassword" class="this-field-is1"></span>
+        <label asp-for="Email" class="email-address"></label>
+        <input asp-for="Email" class="textbox-confirm-pass1" />
+        <span asp-validation-for="Email" class="this-field-is3"></span>
+        <input asp-for="Password" class="textbox-pass" />
+        <label asp-for="Password" class="password"></label>
+        <span asp-validation-for="Password" class="this-field-is2"></span>
+        <label asp-for="Username" class="username">Username</label>
+        <input asp-for="Username" class="textbox-user" />
+        <span asp-validation-for="Username" class="this-field-is"></span>
+        <div class="register-yourself">Register Yourself</div>
+        <div asp-validation-summary="All" class="validator"></div>
+    </div>
+</form>
+

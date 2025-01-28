@@ -1,0 +1,58 @@
+﻿@model CreateSupplierViewModel
+@{
+    ViewData["Title"] = "CreateSupplier";
+}
+<form method="post">
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h1>CreateSupplier</h1>
+        </div>
+    </div>
+</div>
+<br />
+    <div class="row">
+        <div class="col-md-4">
+            <div  class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="SupplierCode" class="control-label"></label>
+                <input asp-for="SupplierCode" class="form-control" />
+                <span asp-validation-for="SupplierCode" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SupplierName" class="control-label"></label>
+                <input asp-for="SupplierName" class="form-control" />
+                <span asp-validation-for="SupplierName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SupplierEmailId" class="control-label"></label>
+                <input asp-for="SupplierEmailId" class="form-control" />
+                <span asp-validation-for="SupplierEmailId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SupplierPhoneNo" class="control-label"></label>
+                <input asp-for="SupplierPhoneNo" class="form-control" />
+                <span asp-validation-for="SupplierPhoneNo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SupplierAddress" class="control-label"></label>
+                <textarea asp-for="SupplierAddress" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="SupplierAddress" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+
+                <button type="submit" class="btn btn-primary">Save</button>
+
+                <a class="btn btn-danger" asp-action="SupplierHome" asp-controller="Admin">Back to List</a>
+            </div>
+
+        </div>
+    </div>
+</form>

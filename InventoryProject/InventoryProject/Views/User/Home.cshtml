@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h1>User Home</h1>
+        </div>
+    </div>
+
+    <br /> <br />
+    <form class="d-flex" asp-action="Home" asp-controller="User">
+        <input name="Name" class="form-control me-sm-2" type="search" placeholder="Search">
+        <button id="search-text" class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <br />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Product Code
+                </th>
+                <th>
+                    Product Name
+                </th>
+                <th>
+                    Quantity Available
+                </th>
+                <th>
+                    Product Price
+                </th>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var obj in Model)
+            {
+                @if (@obj.ProductQuantity != 0)
+                {
+                    <tr>
+                        <td>
+                            @obj.ProductCode
+                        </td>
+                        <td>
+                            @obj.ProductName
+                        </td>
+                        <td>
+                            @obj.ProductQuantity
+                        </td>
+                        <td>
+                            @obj.ProductPrice
+                        </td>
+                        <td>
+                            <a asp-action="AddToCart" asp-controller="User" asp-route-id="@obj.ProductId" class="btn btn-success"> Add</a>
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                       
+                       
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+
+@section scripts{
+        <script>
+            $(function(){
+                $("#search-text").click(function(){
+                    $("Form").submit();
+                })
+            });
+        </script>
+}

@@ -1,0 +1,149 @@
+﻿.button,
+.textbox-confirm-pass {
+    position: absolute;
+    top: 484px;
+    left: 334px;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-white);
+    border: 1px solid var(--katha-light);
+    box-sizing: border-box;
+    width: 302px;
+    height: 47px;
+}
+
+.button {
+    color: var(--katha-light);
+}
+
+.validator {
+    position: absolute;
+    top: 370px;
+    left: 330px;
+    color:white;
+    text-align:left;
+}
+
+.textbox-confirm-pass {
+    top: 262px;
+    left: 570px;
+    border-radius: var(--br-6xs);
+    background-color: var(--color-whitesmoke);
+    border: 1px solid var(--katha-extra-light);
+    width: 300px;
+    height: 45px;
+}
+
+.confirm-password {
+    position: absolute;
+    top: 231px;
+    left: 570px;
+}
+
+.textbox-confirm-pass1 {
+    position: absolute;
+    top: 262px;
+    left: 100px;
+    border-radius: var(--br-6xs);
+    background-color: var(--color-whitesmoke);
+    border: 1px solid var(--katha-extra-light);
+    box-sizing: border-box;
+    width: 300px;
+    height: 45px;
+}
+
+.email-address {
+    position: absolute;
+    top: 231px;
+    left: 100px;
+}
+
+.password,
+.textbox-pass {
+    position: absolute;
+    left: 570px;
+}
+
+.textbox-pass {
+    top: 144px;
+    border-radius: var(--br-6xs);
+    background-color: var(--color-whitesmoke);
+    border: 1px solid var(--katha-extra-light);
+    box-sizing: border-box;
+    width: 300px;
+    height: 45px;
+}
+
+.password {
+    top: 113px;
+}
+
+.textbox-user,
+.username {
+    position: absolute;
+    left: 100px;
+}
+
+.textbox-user {
+    top: 144px;
+    border-radius: var(--br-6xs);
+    background-color: var(--color-whitesmoke);
+    border: 1px solid var(--katha-extra-light);
+    box-sizing: border-box;
+    width: 300px;
+    height: 45px;
+}
+
+.username {
+    top: 113px;
+}
+
+.this-field-is,
+.this-field-is1,
+.this-field-is2,
+.this-field-is3 {
+    position: absolute;
+    top: 194px;
+    left: 100px;
+    font-size: var(--font-size-smi);
+    color: var(--color-white);
+}
+
+.this-field-is1,
+.this-field-is2,
+.this-field-is3 {
+    top: 312px;
+    left: 570px;
+}
+
+.this-field-is2,
+.this-field-is3 {
+    top: 194px;
+}
+
+.this-field-is3 {
+    top: 312px;
+    left: 100px;
+}
+
+.register-yourself {
+    position: absolute;
+    top: 50px;
+    left: 333px;
+    font-size: var(--font-size-21xl);
+    line-height: 24px;
+    color: var(--katha-extra-light);
+}
+
+.register-page {
+    position: absolute;
+    border-radius: var(--br-xl);
+    background: linear-gradient(72.14deg, #682c0e, #c24914);
+    width: 970px;
+    height: 580px;
+    top: 38px;
+    left: 200px;
+    text-align: center;
+    font-size: var(--font-size-base);
+    color: var(--katha-light);
+    font-family: var(--font-playfair-display);
+}

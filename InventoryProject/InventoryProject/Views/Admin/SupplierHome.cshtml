@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Supplier>
+@{
+    ViewData["Title"] = "SupplierHome";
+}
+
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h1>Supplier</h1>
+        </div>
+        <div>
+           
+        </div>
+    </div>
+
+    <br /> <br />
+    <form class="d-flex" asp-action="SupplierHome">
+        <input name="Name" class="form-control me-sm-2" type="search" placeholder="Search">
+        <button id="search-text" class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                     Code
+                </th>
+                <th>
+                     Name
+                </th>
+                <th>
+                     EmailId
+                </th>
+                <th>
+                     Address
+                </th>
+                <th>
+                     PhoneNo
+                </th>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td>
+                        @obj.SupplierCode
+                    </td>
+                    <td>
+                        @obj.SupplierName
+                    </td>
+                    <td>
+                        @obj.SupplierEmailId
+                    </td>
+                    <td>
+                        @obj.SupplierAddress
+                    </td>
+                    <td>
+                        @obj.SupplierPhoneNo
+                    </td>
+
+                    <td>
+                        <a asp-action="EditSupplier" asp-controller="Admin" asp-route-Id="@obj.SupplierId" class="btn btn-outline-success"> Edit</a> |
+                        <a asp-action="DetailsSupplier" asp-controller="admin" asp-route-Id="@obj.SupplierId" class="btn btn-outline-primary"> Details</a> |
+                        <a asp-action="DeleteSupplier" asp-controller="admin" asp-route-Id="@obj.SupplierId" class="btn btn-outline-danger"> Delete</a>
+
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td colspan="6">
+                    <a asp-action="CreateSupplier" class="btn btn-primary float-start">
+                        Create New Supplier
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+@section scripts{
+    <script>
+        $(function () {
+            $("#search-text").click(function () {
+                $("Form").submit();
+            })
+        });
+    </script>
+}

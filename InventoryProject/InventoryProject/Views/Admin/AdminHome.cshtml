@@ -1,0 +1,51 @@
+﻿@model AdminHomeViewModel
+@{
+    ViewData["Title"] = "AdminHome";
+}
+
+    <br/>
+    <br/>
+<div class="card ">
+    <h3 class="card-header">Sales</h3>
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Purchase Id</th>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Payable Amount</th>
+                    <th scope="col">DateTime</th>
+                    <th scope="col">Status</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.purchases.Count; i++)
+                {
+                    <tr >
+                        <td>@Model.purchases[i].PurchaseId</td>
+                        <td>@Model.customerNames[i]</td>
+                        <td>@Model.purchases[i].PayableAmount</td>
+                        <td>@Model.purchases[i].TimeStamp</td>
+                        @if (Model.purchases[i].PurchaseStatus == false)
+                        {
+                            <td>Pending</td>
+
+                            <td>
+                                <a asp-action="paid"  asp-controller="admin" asp-route-Id="@Model.purchases[i].PurchaseId" class="btn btn-success">Paid</a>
+                            </td>
+                        }
+                        else
+                        {
+                            <td>Paid</td>
+                            <td>
+                                <a asp-action="Unpaid" asp-controller="admin" asp-route-Id="@Model.purchases[i].PurchaseId" class="btn btn-danger">Unpaid</a>
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

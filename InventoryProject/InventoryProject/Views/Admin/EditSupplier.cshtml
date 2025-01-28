@@ -1,0 +1,56 @@
+﻿@model Supplier
+@{
+    ViewData["Title"] = "EditSupplier";
+}
+
+
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h1>Edit Supplier</h1>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="EditSupplier">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <input asp-for="SupplierId" class="form-control" type="hidden" />
+                    <span asp-validation-for="SupplierId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SupplierCode" class="control-label"></label>
+                    <input asp-for="SupplierCode" class="form-control" />
+                    <span asp-validation-for="SupplierCode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SupplierName" class="control-label"></label>
+                    <input asp-for="SupplierName" class="form-control" />
+                    <span asp-validation-for="SupplierName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SupplierEmailId" class="control-label"></label>
+                    <input asp-for="SupplierEmailId" class="form-control" />
+                    <span asp-validation-for="SupplierEmailId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SupplierAddress" class="control-label"></label>
+                    <input asp-for="SupplierAddress" class="form-control" />
+                    <span asp-validation-for="SupplierAddress" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SupplierPhoneNo" class="control-label"></label>
+                    <input asp-for="SupplierPhoneNo" class="form-control" />
+                    <span asp-validation-for="SupplierPhoneNo" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                    <a class="btn btn-danger" asp-action="SupplierHome" asp-controller="Admin">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+﻿@model CheckoutViewModel
+@{
+    ViewData["Title"] = "Check out";
+    decimal total = 0;
+    for (int i = 0; i < Model.Products.Count; i++)
+    {
+        total += Model.Products[i].Price;
+    }
+}
+<br />
+<br />
+<div class="container p-3">
+<div class="card mb-3">
+    <h3 class="card-header">Invoice</h3>
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Total Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Products.Count; i++)
+                {
+                    <tr class="table-active">
+                        <td>@Model.Products[i].ProductName</td>
+                        <td>@Model.Products[i].Quantity</td>
+                        <td>@Model.Price[i]</td>
+                        <td>@Model.Products[i].Price</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer text-muted">
+        <a asp-action="ConfirmPurchase" asp-controller="User" asp-route-total="@total" class="btn btn-primary float-sm-end">Proceed</a>
+        Grand Total: @total
+    </div>
+</div>
+</div>
+
+

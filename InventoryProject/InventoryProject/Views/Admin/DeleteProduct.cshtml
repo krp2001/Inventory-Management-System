@@ -1,0 +1,48 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "DeleteProduct";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+<h1>Delete Product</h1>
+</div>
+</div>
+<h3>Are you sure you want to delete this?</h3>
+<br />
+
+<form asp-action="DeleteProduct">
+    <div class="form-group">
+        <input type="hidden" asp-for="@Model.ProductId" />
+
+
+    </div>
+    <div class="form-group">
+        <label asp-for="ProductCode" style="width:140px"><b>Product Code</b></label>
+
+        <label asp-for="ProductCode">@Model.ProductCode</label>
+    </div>
+    <div class="form-group">
+        <label asp-for="ProductName" style="width:140px"><b>Product Name</b></label>
+
+        <label asp-for="ProductName">@Model.ProductName</label>
+    </div>
+    <div class="form-group">
+        <label asp-for="ProductQuantity" style="width:140px"><b>Product Quantity</b></label>
+
+        <label asp-for="ProductQuantity">@Model.ProductQuantity</label>
+    </div>
+    <div class="form-group">
+        <label asp-for="ProductPrice" style="width:140px"><b>Product Price</b></label>
+
+        <label asp-for="ProductPrice">@Model.ProductPrice</label>
+    </div>
+
+
+    <br />
+
+    <button type="submit" class="btn btn-primary">Delete</button>
+    <a class="btn btn-danger" asp-action="ProductItem">Back to List</a>
+</form>
+</div>

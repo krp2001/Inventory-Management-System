@@ -1,0 +1,67 @@
+﻿
+
+@model IList<CartViewModel>;
+@{
+    ViewData["Title"] = "Cart History";
+}
+
+@if (Model.Any())
+{
+    <form method="post">
+        <div class="container p-3">
+            <div class="row pt-4">
+                <div class="col-6">
+                    <h1><i class="bi bi-cart"></i>Cart</h1>
+                </div>
+            </div>
+            <br />
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Quantity
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                        <th>
+
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        <tr>
+                            <td>
+                                @Model[i].ProductName
+                            </td>
+                            <td>
+                                @Model[i].Quantity
+                            </td>
+                            <td>
+                                @Model[i].Price
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                    }
+                    <tr>
+                        <td colspan="4">
+                            <a asp-action="Home" asp-controller="User" class="btn btn-success float-start">Back To Home</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+}
+else
+{
+    <br />
+    <br />
+    <h3 class="text-center">You haven't purchase anything.</h3>
+}

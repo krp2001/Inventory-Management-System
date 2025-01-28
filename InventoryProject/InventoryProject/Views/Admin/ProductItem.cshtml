@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Product>
+
+@{
+    ViewData["Title"] = "ProductItem";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h1>Product</h1>
+        </div>
+        <div>
+            
+        </div>
+    </div>
+
+    <br /> <br />
+    <form class="d-flex" asp-action="ProductItem">
+        <input name="Name" class="form-control me-sm-2" type="search" placeholder="Search">
+        <button id="search-text" class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <br />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Product Code
+                </th>
+                <th>
+                    Product Name
+                </th>
+                <th>
+                    Product Quantity
+                </th>
+                <th>
+                    Product Price
+                </th>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td>
+                        @obj.ProductCode
+                    </td>
+                    <td>
+                        @obj.ProductName
+                    </td>
+                    <td>
+                        @obj.ProductQuantity
+                    </td>
+                    <td>
+                        @obj.ProductPrice
+                    </td>
+                    <td>
+                        <a asp-action="EditProduct" asp-controller="Admin" asp-route-Id="@obj.ProductId" class="btn btn-outline-success"> Edit</a> |
+                        <a asp-action="DetailsProduct" asp-controller="admin" asp-route-Id="@obj.ProductId" class="btn btn-outline-primary"> Details</a> |
+                        <a asp-action="DeleteProduct" asp-controller="admin" asp-route-Id="@obj.ProductId" class="btn btn-outline-danger"> Delete</a>
+
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td colspan="6">
+                    <a asp-action="CreateProduct" class="btn btn-primary float-start">
+                       Create New Product
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+@section scripts{
+    <script>
+        $(function () {
+            $("#search-text").click(function () {
+                $("Form").submit();
+            })
+        });
+    </script>
+}

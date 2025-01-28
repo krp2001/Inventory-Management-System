@@ -1,0 +1,44 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "DetailsProduct";
+}
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+<h1>Product Details</h1>
+</div>
+</div>
+<br/>
+<div class="modal-body">
+    <form asp-action="DetailsProduct">
+        <div class="form-group">
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductCode" style="width:120px"><b>Product Code</b></label>
+
+            <label asp-for="ProductCode">@Model.ProductCode</label>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductName" style="width:120px"><b>Product Name</b></label>
+
+            <label asp-for="ProductName">@Model.ProductName</label>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductQuantity" style="width:120px"><b>Quantity</b></label>
+
+            <label asp-for="ProductQuantity">@Model.ProductQuantity</label>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductPrice" style="width:120px"><b>Price</b></label>
+
+            <label asp-for="ProductPrice">@Model.ProductPrice</label>
+        </div>
+    </form>
+
+</div>
+
+<br />
+<div>
+    <a class="btn btn-danger" asp-action="ProductItem">Back to List</a>
+</div>
+</div>

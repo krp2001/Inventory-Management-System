@@ -1,0 +1,68 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "EditProduct";
+}
+
+
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h1>Edit Product</h1>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="EditProduct">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <input asp-for="ProductId" class="form-control" type="hidden" />
+                    <span asp-validation-for="ProductId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProductCode" class="control-label"></label>
+                    <input asp-for="ProductCode" class="form-control" />
+                    <span asp-validation-for="ProductCode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProductName" class="control-label"></label>
+                    <input asp-for="ProductName" class="form-control" />
+                    <span asp-validation-for="ProductName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProductQuantity" class="control-label"></label>
+                    <input asp-for="ProductQuantity" class="form-control" />
+                    <span asp-validation-for="ProductQuantity" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProductPrice" class="control-label"></label>
+                    <input asp-for="ProductPrice" class="form-control" />
+                    <span asp-validation-for="ProductPrice" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                    <a class="btn btn-danger" asp-action="ProductItem" asp-controller="Admin">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+            @*<div class="card">
+                <div class="card-header">
+                    <h3>Users in this role</h3>
+                </div>
+                <div class="card-body">
+                    @if (Model.ProductName.Any())
+                    {
+                        foreach (var item in Model.ProductName)
+                        {
+                            <h5 class="card-title">@item</h5>
+                        }
+                    }
+                    else
+                    {
+                        <h5 class="card-title">None at the moment</h5>
+                    }
+                </div>*@
+</div>

@@ -1,0 +1,34 @@
+﻿@using InventoryProject.ViewModel;
+@model CreateRoleViewModel
+@{
+    ViewData["Title"] = "Create New Role";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+<h2>Create New Role</h2>
+</div>
+</div>
+<div class="form-group">
+    <form method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div>
+            <fieldset>
+                <label class="form-label mb-3">Role Name</label>
+                <input asp-for="RoleName" class="form-control" type="text" style="width:30%">
+                <span asp-validation-for="RoleName" class="text-danger"></span>
+
+            </fieldset>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Create Role</button>
+
+
+
+
+
+    </form>
+</div>
+</div>
